@@ -1,3 +1,5 @@
+![100](https://github.com/user-attachments/assets/b4e1586a-f793-4ecd-a0c1-46caa4dea0ce)
+
 # Project : Introduction
 As an avid food lover you decide to build a recipe application for those moments where the classics just won’t cut it. The application should allow users to search for a recipe and allow them to keep a list of their favourites.
 
