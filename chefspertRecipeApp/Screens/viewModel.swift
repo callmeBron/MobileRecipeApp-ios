@@ -38,24 +38,12 @@ class ViewModel: ObservableObject{
         networking.fetchSearchedRecipes(for: food.lowercased()){data in
             self.searchedResultList = data.results
             
-            let analysedInstructions = self.searchedResultList
-            for item in analysedInstructions{
-               let analysedInstruction = item.analyzedInstructions
-                for step in analysedInstruction {
-                    for item in step.steps {
-                        self.instructionArray.append(item.step)
-                        for x in item.ingredients{
-                            self.ingredientArray.append(x.name)
-                        }
-                    }
-                }
+            let searchedResults = self.searchedResultList
+            for item in searchedResults {
+                let analysedInstruction = item.summary
+                self.instructionArray.append(analysedInstruction)
+                self.ingredientArray.append( item.title)
             }
-            print(self.instructionArray)
-            print(self.ingredientArray)
         }
     }
-  
-
-        
-    
 }

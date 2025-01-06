@@ -3,11 +3,7 @@ import Foundation
 // create a URL + Session
 
 class RecipeNetworkManager {
-    let apiKey = "1590c289513443ca8f33a5c3d9de9279"
-    //"1590c289513443ca8f33a5c3d9de9279"
-    //"edc157bb1bf9467a91fefa792137dc9f"
-    //"bd4196aaee08464caef99edfba2d9d28"
-    //"969493ec42a540f3810c3ad7bcb5da93"
+    let apiKey = "8eb05a94af7648cbb35e4f0f4c7840d1"
     
     var allRecipe: ComplexRecipeSearch?
     var vegeterianRecipe: ComplexRecipeSearch?
@@ -30,14 +26,14 @@ class RecipeNetworkManager {
         
         //create a task
         let task = URLSession.shared.dataTask(with: request){ data, response, error in
-            guard let data = data else{return}
+            guard let data = data else { return }
             do{
                 //decode data
                 let decodedData = try JSONDecoder().decode(ComplexRecipeSearch.self, from: data)
                 self.allRecipe = decodedData
                 serviceGroup.leave()
                 
-            }catch let error{
+            } catch let error {
                 print("fetch all recipes: \(error.localizedDescription)")
             }
             

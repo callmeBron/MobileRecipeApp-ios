@@ -73,11 +73,11 @@ struct RecipeView: View {
                 }
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        foodSpecification(imageName: "clock", title: "Prep time", infoSlot: "\(recipe.preparationMinutes < 1 ? "0 min" : "\(recipe.preparationMinutes)mins")")
+                        foodSpecification(imageName: "clock", title: "Prep time", infoSlot: "\(recipe.preparationMinutes ?? 0 < 1 ? "0 min" : "\(recipe.preparationMinutes)mins")")
                         foodSpecification(imageName: "hand.thumbsup", title: "Likes", infoSlot: "\(recipe.aggregateLikes)")
                         foodSpecification(imageName: "stethoscope.circle", title: "Health", infoSlot: "\(recipe.healthScore)")
                         foodSpecification(imageName: "person.3", title: "Serves", infoSlot: "\(recipe.servings)")
-                        foodSpecification(imageName: "frying.pan", title: "Cook", infoSlot:  "\(recipe.cookingMinutes < 1 ? "0 min" : "\(recipe.cookingMinutes)mins")")
+                        foodSpecification(imageName: "frying.pan", title: "Cook", infoSlot:  "\(recipe.cookingMinutes ?? 0 < 1 ? "0 min" : "\(recipe.cookingMinutes)mins")")
                     }
                     
                 }
@@ -110,9 +110,9 @@ struct RecipeView: View {
         let favouriteRecipe = Favourite(context: context)
         
         favouriteRecipe.title = recipe.title
-        favouriteRecipe.cookmins = String(recipe.cookingMinutes)
+        favouriteRecipe.cookmins = String(recipe.readyInMinutes)
         favouriteRecipe.healthscore = String(recipe.healthScore)
-        favouriteRecipe.prepmins = String(recipe.preparationMinutes)
+        favouriteRecipe.prepmins = String(recipe.readyInMinutes)
         favouriteRecipe.likes = String(recipe.aggregateLikes)
         favouriteRecipe.serves = String(recipe.servings)
         favouriteRecipe.image = recipe.image
@@ -120,13 +120,6 @@ struct RecipeView: View {
     }
  
 }
-
-
-//struct RecipeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecipeView()
-//    }
-//}
 
 struct foodSpecification: View {
     var imageName: String
