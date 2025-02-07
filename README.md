@@ -1,4 +1,5 @@
-![100](https://github.com/user-attachments/assets/b4e1586a-f793-4ecd-a0c1-46caa4dea0ce)
+
+![Rectangle 25](https://github.com/user-attachments/assets/48d64f66-e9e2-4b8b-bb04-9a98bd27ce7a)
 
 # Project : Introduction
 As an avid food lover you decide to build a recipe application for those moments where the classics just won’t cut it. The application should allow users to search for a recipe and allow them to keep a list of their favourites.
@@ -14,6 +15,10 @@ of recipes, with ingredients and steps on how to make the dishes.
 Filter through and find the perfect meal to start, continue or end your day.
 
 For the meantime, the mobile application will be started off in the SwifUI framework. 
+
+
+
+<img width="236" alt="image" src="https://github.com/user-attachments/assets/77502804-6591-4301-8be4-78ac297525ea" />
 
 
 # Resources and API's
